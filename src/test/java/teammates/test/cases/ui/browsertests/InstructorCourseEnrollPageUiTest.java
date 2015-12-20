@@ -69,9 +69,9 @@ public class InstructorCourseEnrollPageUiTest extends BaseUiTestCase {
 
         
         try{
-            enrollPage.verifyDownloadableFile(enrollPage.getSpreadsheetLink(), expectedShaHexForWindows);
+            enrollPage.verifyDownloadableFile(new Url(enrollPage.getSpreadsheetLink()), expectedShaHexForWindows);
         } catch (AssertionError e){
-            enrollPage.verifyDownloadableFile(enrollPage.getSpreadsheetLink(), expectedShaHexForUnix);
+            enrollPage.verifyDownloadableFile(new Url(enrollPage.getSpreadsheetLink()), expectedShaHexForUnix);
         }
     }
 
