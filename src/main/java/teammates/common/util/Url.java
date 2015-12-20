@@ -2,7 +2,7 @@ package teammates.common.util;
 
 public class Url {
 
-    private String urlString;
+    protected String urlString;
 
     public Url(String url) {
         this.urlString = url;
@@ -35,49 +35,58 @@ public class Url {
         }
     }
 
-    public Url withUserId(String userId) {
+    @SuppressWarnings("unchecked")
+    public <T extends Url> T withUserId(String userId) {
         this.urlString = addParamToUrl(this.urlString, Const.ParamsNames.USER_ID, userId);
-        return this;
+        return (T) this;
     }
 
-    public Url withRegistrationKey(String key) {
+    @SuppressWarnings("unchecked")
+    public <T extends Url> T withRegistrationKey(String key) {
         this.urlString = addParamToUrl(this.urlString, Const.ParamsNames.REGKEY, key);
-        return this;
+        return (T) this;
     }
 
-    public Url withInstructorInstitution(String institute) {
+    @SuppressWarnings("unchecked")
+    public <T extends Url> T withInstructorInstitution(String institute) {
         this.urlString = addParamToUrl(this.urlString, Const.ParamsNames.INSTRUCTOR_INSTITUTION, institute);
-        return this;
+        return (T) this;
     }
 
-    public Url withCourseId(String courseId) {
+    @SuppressWarnings("unchecked")
+    public <T extends Url> T withCourseId(String courseId) {
         this.urlString = addParamToUrl(this.urlString, Const.ParamsNames.COURSE_ID, courseId);
-        return this;
+        return (T) this;
     }
 
-    public Url withSessionName(String feedbackSessionName) {
+    @SuppressWarnings("unchecked")
+    public <T extends Url> T withSessionName(String feedbackSessionName) {
         this.urlString = addParamToUrl(this.urlString, Const.ParamsNames.FEEDBACK_SESSION_NAME, feedbackSessionName);
-        return this;
+        return (T) this;
     }
 
-    public Url withStudentEmail(String email) {
+    @SuppressWarnings("unchecked")
+    public <T extends Url> T withStudentEmail(String email) {
         this.urlString = addParamToUrl(this.urlString, Const.ParamsNames.STUDENT_EMAIL, email);
-        return this;
+        return (T) this;
     }
 
-    public Url withInstructorId(String instructorId) {
+    @SuppressWarnings("unchecked")
+    public <T extends Url> T withInstructorId(String instructorId) {
         this.urlString = addParamToUrl(this.urlString, Const.ParamsNames.INSTRUCTOR_ID, instructorId);
-        return this;
+        return (T) this;
     }
 
-    public Url withCourseName(String courseName) {
+    @SuppressWarnings("unchecked")
+    public <T extends Url> T withCourseName(String courseName) {
         this.urlString = addParamToUrl(this.urlString, Const.ParamsNames.COURSE_NAME, courseName);
-        return this;
+        return (T) this;
     }
 
-    public Url withParam(String paramName, String paramValue) {
+    @SuppressWarnings("unchecked")
+    public <T extends Url> T withParam(String paramName, String paramValue) {
         this.urlString = addParamToUrl(this.urlString, paramName, paramValue);
-        return this;
+        return (T) this;
     }
 
     /**
